@@ -73,7 +73,7 @@ const Portfolio = () => {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:50px_50px]" />
       
       <div 
-        className="relative z-10 max-w-6xl mx-auto px-4 py-8"
+        className="relative z-10 w-full px-4 py-8"
         style={{
           transform: `translate(${mousePosition.x * -10}px, ${mousePosition.y * -10}px)`,
           transition: 'transform 0.2s ease-out'
@@ -84,13 +84,12 @@ const Portfolio = () => {
         <main className="mt-16">
           {activeSection === 'home' && <HomeSection />}
           {activeSection === 'about' && <AboutSection />}
-          {activeSection === 'skills' && <SkillsSection />}
           {activeSection === 'projects' && <ProjectsSection projects={projects} />}
           {activeSection === 'contact' && <ContactSection />}
         </main>
         
         <footer className="mt-24 pb-8 text-center text-gray-400">
-          <p>© 2025 DARLENE WENDY - Portfolio Website</p>
+          <p>© 2025 YOUR NAME - Portfolio Website</p>
           <div className="flex justify-center mt-4 space-x-4">
             <a href="#" className="text-gray-400 hover:text-white transition-colors">
               <Github size={20} />
@@ -141,7 +140,7 @@ const LoadingScreen = () => {
 
 const Navigation = ({ activeSection, setActiveSection }) => {
   return (
-    <nav className="py-4 flex justify-between items-center">
+    <nav className="py-4 flex justify-between items-center w-full">
       <div className="text-2xl font-bold">
         <span className="text-purple-500">PORT</span>FOLIO
       </div>
@@ -212,7 +211,7 @@ const HomeSection = () => {
   const y = centerY + radius * Math.sin(robotPosition * Math.PI / 180);
   
   return (
-    <section className="min-h-screen flex flex-col justify-center relative">
+    <section className="min-h-screen flex flex-col justify-center relative w-full">
       {/* Animated Robot */}
       <div className="absolute right-0 md:right-24 top-0 md:top-24 w-64 h-64">
         <div className="relative w-full h-full">
@@ -395,7 +394,7 @@ const AboutSection = () => {
   
   return (
     <section className="min-h-screen py-16">
-      <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="grid md:grid-cols-2 gap-12 items-center w-full">
         <div>
           <h2 className="text-4xl font-bold mb-6">About <span className="text-purple-500">Me</span></h2>
           <p className="text-gray-300 mb-4">
@@ -575,7 +574,7 @@ const ProjectsSection = ({ projects }) => {
   const [activeProject, setActiveProject] = useState(null);
   
   return (
-    <section className="min-h-screen py-16">
+    <section className="min-h-screen py-16 w-full">
       <h2 className="text-4xl font-bold mb-12">My <span className="text-purple-500">Projects</span></h2>
       
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
