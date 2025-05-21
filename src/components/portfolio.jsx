@@ -56,7 +56,7 @@ const Portfolio = () => {
   }
   
   return (
-    <div className="bg-black text-white min-h-screen font-sans relative overflow-hidden">
+    <div className="bg-black text-white min-h-screen font-sans relative overflow-hidden w-screen max-w-full">
       {/* Mouse follower */}
       <div 
         className="fixed w-6 h-6 rounded-full bg-purple-500 opacity-70 pointer-events-none z-50 blur-sm"
@@ -89,7 +89,7 @@ const Portfolio = () => {
         </main>
         
         <footer className="mt-24 pb-8 text-center text-gray-400">
-          <p>© 2025 YOUR NAME - Portfolio Website</p>
+          <p>© 2025 Darlene Wendy - Portfolio Website</p>
           <div className="flex justify-center mt-4 space-x-4">
             <a href="#" className="text-gray-400 hover:text-white transition-colors">
               <Github size={20} />
@@ -635,7 +635,7 @@ const ContactSection = () => {
               <Mail className="text-purple-500 mr-4" size={24} />
               <div>
                 <div className="text-gray-400">Email</div>
-                <div className="text-lg">your.email@example.com</div>
+                <div className="text-lg">darlenewendie@gmail.com</div>
               </div>
             </div>
             
@@ -645,7 +645,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <div className="text-gray-400">LinkedIn</div>
-                <div className="text-lg">linkedin.com/in/yourprofile</div>
+                <div className="text-lg">https://www.linkedin.com/in/darlene-wendy-638065254/</div>
               </div>
             </div>
             
@@ -653,7 +653,7 @@ const ContactSection = () => {
               <Github className="text-purple-500 mr-4" size={24} />
               <div>
                 <div className="text-gray-400">GitHub</div>
-                <div className="text-lg">github.com/yourusername</div>
+                <div className="text-lg">https://github.com/Darlene-12</div>
               </div>
             </div>
           </div>
