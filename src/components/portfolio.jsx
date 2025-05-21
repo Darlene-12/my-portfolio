@@ -169,7 +169,7 @@ const Navigation = ({ activeSection, setActiveSection }) => {
 
 const HomeSection = () => {
   const [text, setText] = useState('');
-  const fullText = "YOUR_NAME";
+  const fullText = "Darlene Wendy Nasimiyu";
   const [robotPosition, setRobotPosition] = useState(0);
   const [isRobotPulsing, setIsRobotPulsing] = useState(false);
   
@@ -183,11 +183,7 @@ const HomeSection = () => {
       }
     }, 200);
     
-    return () => clearInterval(timer);
-  }, []);
-  
-  // Robot animation
-  useEffect(() => {
+    // Robot animation
     const robotAnimInterval = setInterval(() => {
       setRobotPosition(prev => (prev + 1) % 360);
     }, 50);
@@ -198,6 +194,7 @@ const HomeSection = () => {
     }, 2000);
     
     return () => {
+      clearInterval(timer);
       clearInterval(robotAnimInterval);
       clearInterval(pulseInterval);
     };
@@ -211,9 +208,32 @@ const HomeSection = () => {
   const y = centerY + radius * Math.sin(robotPosition * Math.PI / 180);
   
   return (
-    <section className="min-h-screen flex flex-col justify-center relative w-full">
+    <section className="h-screen flex items-center relative w-full overflow-hidden">
+      {/* Animated background particles */}
+      <div className="absolute inset-0 z-0">
+        {[...Array(20)].map((_, i) => (
+          <div 
+            key={i}
+            className="absolute rounded-full bg-purple-500 opacity-20"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              width: `${Math.random() * 50 + 10}px`,
+              height: `${Math.random() * 50 + 10}px`,
+              animationDuration: `${Math.random() * 20 + 10}s`,
+              animationDelay: `${Math.random() * 5}s`,
+              animation: `float ${Math.random() * 10 + 15}s infinite linear`
+            }}
+          />
+        ))}
+      </div>
+      
+      {/* Glowing gradient accent */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600 rounded-full blur-3xl opacity-20 animate-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-600 rounded-full blur-3xl opacity-20 animate-pulse" style={{animationDelay: '2s'}} />
+      
       {/* Animated Robot */}
-      <div className="absolute right-0 md:right-24 top-0 md:top-24 w-64 h-64">
+      <div className="absolute right-10 top-1/4 w-64 h-64">
         <div className="relative w-full h-full">
           {/* Circle path */}
           <div className="absolute w-full h-full rounded-full border border-purple-500 opacity-20"></div>
@@ -309,30 +329,64 @@ const HomeSection = () => {
         
         {/* AI & ML text */}
         <div className="absolute -bottom-2 right-0 text-xs text-blue-400 font-mono opacity-70">
-          <div>AI & MACHINE LEARNING</div>
+          <div>BACK-END DEVELOPMENT, DATA, ENGINEERING, AI & MACHINE LEARNING</div>
           <div className="text-right text-purple-400">{'<learning...>'}</div>
         </div>
       </div>
       
-      <div className="max-w-3xl">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6">
-          <span className="text-purple-500">{text}</span>
+      {/* Content with enhanced styling */}
+      <div className="max-w-2xl ml-10 z-10 relative">
+        <div className="mb-2 flex items-center">
+          <div className="h-0.5 w-10 bg-purple-500 mr-3"></div>
+          <span className="text-purple-400 uppercase tracking-widest text-sm font-semibold">Welcome to my world</span>
+        </div>
+        
+        <h1 className="text-4xl md:text-7xl font-bold mb-4 relative">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">Darlene Wendy Nasimiyul</span>
           <span className="inline-block w-1 h-10 bg-purple-500 animate-blink ml-1"></span>
+          <div className="absolute -bottom-2 -z-10 h-3 bg-purple-500 opacity-30 w-full"></div>
         </h1>
-        <h2 className="text-2xl md:text-3xl text-gray-300 mb-8">
-          YOUR_PROFESSION <span className="text-purple-500">•</span> YOUR_SPECIALTY
+        
+        <h2 className="text-xl md:text-2xl text-gray-300 mb-6 font-light">
+          <span className="text-purple-300 font-normal">Mining & Petroleum Engineering Student</span> • 
+          <span className="text-blue-300 font-normal"> Backend Developer</span> •
+          <span className="text-teal-300 font-normal"> Data & AI Enthusiast</span>
         </h2>
-        <p className="text-xl text-gray-400 mb-12 max-w-2xl">
-          A brief introduction about yourself and what you do. This is your elevator pitch. Keep it short, engaging, and memorable.
+        
+        <p className="text-lg text-gray-400 mb-8 max-w-xl leading-relaxed border-l-2 border-purple-500 pl-4 backdrop-blur-sm bg-black bg-opacity-20 p-4 rounded-r-lg">
+          I'm a final-year Mining and Mineral Processing Engineering student at JKUAT—driven by a vision to fuse technology and sustainability to transform how we extract, move, and power the world with resources.
         </p>
+        
         <div className="flex space-x-4">
-          <button className="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-full flex items-center transition-colors">
+          <button className="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-700 hover:to-purple-900 rounded-full flex items-center transition-all shadow-lg hover:shadow-purple-500/30">
             View Projects <ArrowRight className="ml-2" size={18} />
           </button>
-          <button className="px-6 py-3 border border-gray-700 hover:border-purple-500 rounded-full flex items-center transition-colors">
+          <button className="px-6 py-3 border border-purple-500 hover:bg-purple-500 hover:bg-opacity-10 rounded-full flex items-center transition-all backdrop-blur-sm">
             Contact Me
           </button>
         </div>
+        
+        {/* Social media icons */}
+        <div className="mt-8 flex space-x-4">
+          <a href="#" className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-purple-500 transition-all hover:-translate-y-1">
+            <Github size={18} className="text-gray-400 hover:text-purple-500" />
+          </a>
+          <a href="#" className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-purple-500 transition-all hover:-translate-y-1">
+            <Linkedin size={18} className="text-gray-400 hover:text-purple-500" />
+          </a>
+          <a href="#" className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-purple-500 transition-all hover:-translate-y-1">
+            <Mail size={18} className="text-gray-400 hover:text-purple-500" />
+          </a>
+        </div>
+      </div>
+      
+      {/* Decorative code snippet */}
+      <div className="absolute bottom-10 right-10 font-mono text-xs text-gray-500 backdrop-blur-sm bg-black bg-opacity-30 p-3 rounded border border-gray-800 hidden lg:block">
+        <div><span className="text-purple-400">const</span> <span className="text-blue-400">engineer</span> = {`{`}</div>
+        <div>&nbsp;&nbsp;<span className="text-gray-400">name:</span> <span className="text-green-400">"Darlene Wendy"</span>,</div>
+        <div>&nbsp;&nbsp;<span className="text-gray-400">passion:</span> <span className="text-green-400">"Sustainable mining + AI"</span>,</div>
+        <div>&nbsp;&nbsp;<span className="text-gray-400">mission:</span> <span className="text-green-400">"Transform the industry"</span></div>
+        <div>{`}`};</div>
       </div>
     </section>
   );
@@ -398,7 +452,10 @@ const AboutSection = () => {
         <div>
           <h2 className="text-4xl font-bold mb-6">About <span className="text-purple-500">Me</span></h2>
           <p className="text-gray-300 mb-4">
-            This is where you talk about yourself. Share your journey, background, and what drives you. Keep it authentic and engaging.
+            I'm a final-year Mining and Mineral Processing Engineering student at JKUAT—driven by a vision to fuse technology and sustainability to transform how we extract, move, and power the world with resources.
+            My passion lies not just in minerals, but in energy systems, climate-conscious engineering, and the digital future of industrial processes. With skills in backend development (Django, PostgreSQL), data science, and machine learning, I’m exploring how we can build smarter pipelines—from geological data and logistics flows, to AI-powered exploration and process optimization.
+            I believe data is the heartbeat of modern engineering, and that creating seamless systems for real-time insights, automation, and sustainability is how we move forward. Whether it’s optimizing logistics in mineral supply chains or leveraging AI to model energy systems, my goal is to help build resilient, data-driven infrastructure across Africa’s energy and extractive industries.
+            I don’t just want to work in the industry — I want to shape its evolution. Through code, creativity, and a commitment to sustainability, I’m building toward a future where engineering and intelligence meet purpose.
           </p>
           <p className="text-gray-300 mb-4">
             Mention your education, experience, and any significant achievements that demonstrate your expertise in your field.
@@ -538,17 +595,31 @@ const AboutSection = () => {
         <div className="space-y-12">
           {[
             {
-              period: "2014 - 2018",
-              institution: "University of Technology",
-              degree: "Bachelor of Science in Computer Science",
+              period: "2021 - 2026: On Going",
+              institution: "Jomo Kenyatta University of Agriculture and Technology",
+              degree: "Bachelor of Science in Mining and Mineral Processing Engineering",
               description: "Graduated with honors. Specialized in web development and UI/UX design. Completed a capstone project on building accessible web applications."
             },
             {
-              period: "2022",
-              institution: "Tech Academy",
-              degree: "Advanced React Certification",
+              period: "2024",
+              institution: "Jomo Kenyatta University of Agriculture and Technology",
+              degree: "Data Science and Machine Learning",
               description: "Completed an intensive course on advanced React patterns, state management, and performance optimization techniques."
-            }
+            },
+            {
+              period: "2025",
+              institution: "ALX Africa",
+              degree: "Full-Stack Software Engineering",
+              degree: "Data Science and Machine Learning",
+              description:""
+            },
+            {
+              period: "2025",
+              institution: "Data Camp",
+              degree: "Associate Data Scientist",
+              description: "Completed a comprehensive course on data analysis and visualization using Python and SQL."
+              
+            },
           ].map((item, index) => (
             <div key={index} className="border-l-2 border-blue-500 pl-6 pb-8 relative">
               <div className="absolute top-0 left-0 w-4 h-4 bg-blue-500 rounded-full -translate-x-1/2" />
