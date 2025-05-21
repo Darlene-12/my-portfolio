@@ -142,7 +142,7 @@ const Navigation = ({ activeSection, setActiveSection }) => {
   return (
     <nav className="py-4 flex justify-between items-center w-full">
       <div className="text-2xl font-bold">
-        <span className="text-purple-500">PORT</span>FOLIO
+        <span className="text-purple-500"> My PERSONAL </span>PORTFOLIO
       </div>
       
       <ul className="hidden md:flex space-x-8">
@@ -394,16 +394,16 @@ const HomeSection = () => {
 
 const AboutSection = () => {
   const skills = [
-    { name: "React", level: 90, color: "bg-blue-500" },
+    { name: "React", level: 70, color: "bg-blue-500" },
     { name: "JavaScript", level: 85, color: "bg-yellow-500" },
     { name: "Node.js", level: 80, color: "bg-green-500" },
-    { name: "HTML/CSS", level: 95, color: "bg-orange-500" },
-    { name: "TypeScript", level: 75, color: "bg-blue-400" },
-    { name: "UI/UX Design", level: 70, color: "bg-pink-500" },
+    { name: "HTML/CSS", level: 100, color: "bg-orange-500" },
+    { name: "TypeScript", level: 25, color: "bg-blue-400" },
+    { name: "Database Design", level: 100, color: "bg-pink-500" },
     { name: "Git", level: 85, color: "bg-red-500" },
-    { name: "MongoDB", level: 65, color: "bg-green-600" },
-    { name: "GraphQL", level: 60, color: "bg-purple-600" },
-    { name: "AWS", level: 70, color: "bg-yellow-600" }
+    { name: "Excel", level: 85, color: "bg-green-600" },
+    { name: "Postgre SQL", level: 60, color: "bg-purple-600" },
+    { name: "Django", level: 50, color: "bg-yellow-600" }
   ];
 
   // For the floating skills animation
@@ -451,30 +451,20 @@ const AboutSection = () => {
       <div className="grid md:grid-cols-2 gap-12 items-center w-full">
         <div>
           <h2 className="text-4xl font-bold mb-6">About <span className="text-purple-500">Me</span></h2>
-          <p className="text-gray-300 mb-4">
-            I'm a final-year Mining and Mineral Processing Engineering student at JKUAT—driven by a vision to fuse technology and sustainability to transform how we extract, move, and power the world with resources.
-            My passion lies not just in minerals, but in energy systems, climate-conscious engineering, and the digital future of industrial processes. With skills in backend development (Django, PostgreSQL), data science, and machine learning, I’m exploring how we can build smarter pipelines—from geological data and logistics flows, to AI-powered exploration and process optimization.
-            I believe data is the heartbeat of modern engineering, and that creating seamless systems for real-time insights, automation, and sustainability is how we move forward. Whether it’s optimizing logistics in mineral supply chains or leveraging AI to model energy systems, my goal is to help build resilient, data-driven infrastructure across Africa’s energy and extractive industries.
-            I don’t just want to work in the industry — I want to shape its evolution. Through code, creativity, and a commitment to sustainability, I’m building toward a future where engineering and intelligence meet purpose.
-          </p>
-          <p className="text-gray-300 mb-4">
-            Mention your education, experience, and any significant achievements that demonstrate your expertise in your field.
-          </p>
-          <p className="text-gray-300 mb-8">
-            What makes you unique? What philosophy guides your work? This is your chance to connect with visitors on a personal level.
+          <p className="text-gray-300 mb-8 text-xl leading-relaxed">
+            I'm a final-year Engineering student at JKUAT, specializing in Mining and Mineral Processing, with a growing passion for energy systems, sustainability, and the power of technology. My interests extend beyond traditional engineering into backend development (Django, PostgreSQL), data science, and machine learning—where I'm exploring how intelligent systems can optimize logistics, power distribution, and infrastructure across Africa. Through full stack development (React, TypeScript, HTML, CSS, Vite), I’m building solutions that automate workflows, analyze data, and drive impact in real-world systems. I believe data is the backbone of modern innovation, and my goal is to create efficient, scalable digital pipelines that make industries smarter, cleaner, and more connected. I don’t just want to join the future of energy and engineering—I want to help build it.
           </p>
         </div>
-        
         <div className="relative">
-          <div className="relative overflow-hidden rounded-lg border-2 border-purple-500 w-full aspect-square">
+          <div className="relative overflow-hidden rounded-lg border-2 border-purple-500 w-24 h-24">
             <img 
-              src="/api/placeholder/600/600" 
+              src="/src/assets/Profile.jpg" 
               alt="Your Profile" 
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-purple-600 rounded-full opacity-30 blur-xl" />
-          <div className="absolute -top-6 -left-6 w-32 h-32 bg-blue-600 rounded-full opacity-30 blur-xl" />
+            <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-purple-600 rounded-full opacity-30 blur-xl" />
+            <div className="absolute -top-4 -left-4 w-16 h-16 bg-blue-600 rounded-full opacity-30 blur-xl" />
         </div>
       </div>
       
@@ -598,20 +588,26 @@ const AboutSection = () => {
               period: "2021 - 2026: On Going",
               institution: "Jomo Kenyatta University of Agriculture and Technology",
               degree: "Bachelor of Science in Mining and Mineral Processing Engineering",
-              description: "Graduated with honors. Specialized in web development and UI/UX design. Completed a capstone project on building accessible web applications."
+              description: "Currently pursuing a comprehensive program covering mineral extraction, processing, geology, and sustainable engineering. Developed strong interests in backend development, energy systems, and the use of data and AI in industrial operations. Ongoing capstone focus: Tech-integrated mining systems and sustainable engineering."
             },
             {
               period: "2024",
               institution: "Jomo Kenyatta University of Agriculture and Technology",
               degree: "Data Science and Machine Learning",
-              description: "Completed an intensive course on advanced React patterns, state management, and performance optimization techniques."
+              description: "CCompleted a hands-on program covering Python programming, data analysis, and machine learning fundamentals, with exposure to real-world projects focused on problem-solving, modeling, and data-driven decision making.."
             },
             {
               period: "2025",
               institution: "ALX Africa",
               degree: "Full-Stack Software Engineering",
+              description:"Immersive program focused on software engineering principles and hands-on project development. I’m particularly passionate about the backend, where I’m building strong skills in API development, database design, authentication, and server-side logic. On the frontend, I’ve worked with JavaScript, HTML, CSS, TypeScript, and modern frameworks like React (with Vite) to build responsive and interactive web applications."
+            },
+            {
+              period: "2025: On Going",
+              institution: "ALX Africa",
               degree: "Data Science and Machine Learning",
-              description:""
+              description: "Gaining deep insight and practical skills in Excel for data manipulation, Python programming, exploratory data analysis, and machine learning. Topics covered include regression, classification, and neural networks, with a strong focus on real-world projects, data storytelling, and model evaluation."  
+
             },
             {
               period: "2025",
