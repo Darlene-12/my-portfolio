@@ -209,7 +209,7 @@ const HomeSection = () => {
   
   return (
     <section className="h-screen flex items-center relative w-full overflow-hidden">
-      {/* Animated background particles */}
+      {/* Animated background particles}
       <div className="absolute inset-0 z-0">
         {[...Array(20)].map((_, i) => (
           <div 
