@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, ExternalLink, ChevronDown, Database, Brain, Code, BarChart3, Server, Cpu, MapPin, Clock, Zap, Users, Star } from 'lucide-react';
+import portfolioBackground from '../assets/PORTFOLIO BACKGROUND.png';
 
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -22,16 +23,16 @@ const Portfolio = () => {
     {
       title: "Multitasking Web Scraping Bot",
       description: "Advanced web scraping solution using Selenium, BeautifulSoup, and Django for automated data extraction and processing with real-time monitoring capabilities.",
-      image: "/api/placeholder/600/400",
+      image: "../src/assets/webscrapping bot.png",
       category: "Backend Development",
       tech: ["Python", "Django", "Selenium", "BeautifulSoup", "Redis"],
       github: "#",
       live: "#"
     },
     {
-      title: "Healthcare Data Analytics Platform",
+      title: "Occupational Health Analytics in Mining",
       description: "Comprehensive healthcare data analysis platform with predictive modeling, patient outcome insights, and interactive dashboards for medical professionals.",
-      image: "/api/placeholder/600/400",
+      image: "../src/assets/Healthcareinmining.png",
       category: "Data Science",
       tech: ["Python", "Scikit-learn", "Pandas", "Tableau", "PostgreSQL"],
       github: "#",
@@ -40,7 +41,7 @@ const Portfolio = () => {
     {
       title: "Energy Optimization ML System",
       description: "Machine learning system for optimizing energy consumption in mining operations using advanced neural networks and regression analysis with real-time monitoring.",
-      image: "/api/placeholder/600/400",
+      image: "../src/assets/energy  optimization.png",
       category: "Machine Learning",
       tech: ["Python", "TensorFlow", "Scikit-learn", "NumPy", "Docker"],
       github: "#",
@@ -49,7 +50,7 @@ const Portfolio = () => {
     {
       title: "Eco-Friendly Marketplace Platform",
       description: "Full-stack marketplace platform with secure payment processing, real-time chat, and advanced product recommendation algorithms for sustainable products.",
-      image: "/api/placeholder/600/400",
+      image: "../src/assets/ecofriendly market.png",
       category: "Backend Development", 
       tech: ["Node.js", "React", "PostgreSQL", "Socket.io", "Stripe"],
       github: "#",
@@ -58,7 +59,7 @@ const Portfolio = () => {
     {
       title: "Netflix Content Analytics Dashboard",
       description: "Interactive Power BI dashboard analyzing Netflix content trends, viewing patterns, user engagement metrics, and predictive content recommendations.",
-      image: "/api/placeholder/600/400",
+      image: "../src/assets/netflix.jpeg",
       category: "Data Science",
       tech: ["Power BI", "DAX", "SQL", "Python", "Excel"],
       github: "#",
@@ -68,12 +69,32 @@ const Portfolio = () => {
 
   return (
     <div className="w-screen min-h-screen bg-black text-white overflow-x-hidden" style={{ width: '100vw', minHeight: '100vh', margin: 0, padding: 0 }}>
-      {/* Animated Background */}
+            {/* Background Image */}
+      <div className="fixed inset-0 w-screen h-full z-0 overflow-hidden"
+           style={{ width: '100vw', height: '100%' }}>
+        {/* Main background image */}
+        <div 
+          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(${portfolioBackground})`, // Use the imported image
+            opacity: 0.3 // Adjust opacity so text is readable
+          }}
+        ></div>
+        
+        {/* Dark overlay for better text contrast */}
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-black/70 via-black/50 to-black/70"></div>
+        
+        {/* Optional: Keep some animated elements */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      </div>
+
+      {/* Animated Background }
       <div className="fixed inset-0 w-full h-full z-0">
         <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-950/20 via-black to-purple-950/20"></div>
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      </div>
+      </div> */}
 
       {/* Navigation */}
       <nav className={`fixed top-0 w-full h-auto z-50 transition-all duration-500 ${isScrolled ? 'bg-black/90 backdrop-blur-xl border-b border-gray-800/50' : 'bg-transparent'}`}>
@@ -121,7 +142,7 @@ const Portfolio = () => {
               <div className="text-2xl lg:text-3xl space-y-2">
                 <p className="text-gray-400">Hello, I'm <span className="text-white font-semibold">Darlene Wendy</span></p>
                 <p>
-                  <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent font-bold">
+                  <span className="bg-gradient-to-r from-blue-100 to-purple-200 bg-clip-text text-transparent font-bold">
                     Backend Developer & Data Scientist
                   </span>
                 </p>
@@ -153,7 +174,7 @@ const Portfolio = () => {
               <div className="w-96 h-96 rounded-full overflow-hidden border-4 border-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 p-1 shadow-2xl shadow-blue-500/25">
                 <div className="w-full h-full rounded-full overflow-hidden bg-black">
                   <img 
-                    src="/api/placeholder/384/384" 
+                    src="../src/assets/portfolio image.jpg" 
                     alt="Darlene Wendy" 
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
@@ -162,16 +183,16 @@ const Portfolio = () => {
               
               {/* Floating connection dots */}
               <div className="absolute -top-6 -left-6 w-16 h-16 rounded-full overflow-hidden border-3 border-white shadow-lg hover:scale-110 transition-transform duration-300">
-                <img src="/api/placeholder/64/64" alt="Connection" className="w-full h-full object-cover" />
+                <img src="../src/assets/Snapchat-2116534412.jpg" alt="Connection" className="w-full h-full object-cover" />
               </div>
               <div className="absolute top-20 -right-10 w-12 h-12 rounded-full overflow-hidden border-3 border-white shadow-lg hover:scale-110 transition-transform duration-300 delay-100">
-                <img src="/api/placeholder/48/48" alt="Connection" className="w-full h-full object-cover" />
+                <img src="../src/assets/Photo.jpg" alt="Connection" className="w-full h-full object-cover" />
               </div>
               <div className="absolute -bottom-8 left-16 w-20 h-20 rounded-full overflow-hidden border-3 border-white shadow-lg hover:scale-110 transition-transform duration-300 delay-200">
-                <img src="/api/placeholder/80/80" alt="Connection" className="w-full h-full object-cover" />
+                <img src="../src/assets/Profile.jpg" alt="Connection" className="w-full h-full object-cover" />
               </div>
               <div className="absolute bottom-24 -right-6 w-14 h-14 rounded-full overflow-hidden border-3 border-white shadow-lg hover:scale-110 transition-transform duration-300 delay-300">
-                <img src="/api/placeholder/56/56" alt="Connection" className="w-full h-full object-cover" />
+                <img src="../src/assets/PORTFOLIO BACKGROUND.png" alt="Connection" className="w-full h-full object-cover" />
               </div>
               
               {/* Collaboration Badge */}
@@ -263,7 +284,7 @@ const Portfolio = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-20">
             <h2 className="text-lg font-medium text-gray-400 mb-4 tracking-wider uppercase">Featured Case Studies</h2>
-            <h3 className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+            <h3 className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-250 bg-clip-text text-transparent">
               Curated Work
             </h3>
           </div>
@@ -327,7 +348,7 @@ const Portfolio = () => {
               <div className="w-80 h-80 relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-xl"></div>
                 <img 
-                  src="/api/placeholder/320/320" 
+                  src="../src/assets/FUTURE.png" 
                   alt="Tech skills visualization" 
                   className="w-full h-full object-cover rounded-full border-4 border-gradient-to-r from-blue-400 to-purple-500 animate-spin-slow hover:scale-105 transition-transform duration-500"
                 />
@@ -428,7 +449,7 @@ const Portfolio = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
                 <div className="relative w-96 h-[500px] rounded-2xl overflow-hidden border border-gray-700/50 shadow-2xl">
                   <img 
-                    src="/api/placeholder/384/500" 
+                    src="../src/assets/my-logo.png" 
                     alt="Darlene Wendy" 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />

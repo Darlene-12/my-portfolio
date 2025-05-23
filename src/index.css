@@ -32,6 +32,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
+  background-image: url('./assets/PORTFOLIO BACKGROUND.png');
   min-width: 320px;
   min-height: 100vh;
 }
@@ -40,6 +41,14 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
+/* Add this to your existing index.css */
+.portfolio-background {
+  background-image: url('./assets/PORTFOLIO BACKGROUND.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+} 
 
 button {
   border-radius: 8px;
